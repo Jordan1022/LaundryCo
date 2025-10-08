@@ -45,7 +45,7 @@ export function ContactSection() {
         <h2>Ready for fresher laundry days?</h2>
         <p>
           Drop us a note with what you need - pick-up and delivery, wash and fold,
-          commercial loads - we'll tailor a plan for you.
+          commercial loads - we&apos;ll tailor a plan for you.
         </p>
         <div className={styles.actions}>
           <button
@@ -131,7 +131,7 @@ export function ContactSection() {
               </button>
               {status === "success" && (
                 <p className={styles.successMessage}>
-                  Thanks! We'll be in touch within one business day.
+                  Thanks! We&apos;ll be in touch within one business day.
                 </p>
               )}
             </form>

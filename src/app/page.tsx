@@ -11,7 +11,7 @@ const featureData = [
   {
     title: "Wash & Fold Concierge",
     description:
-      "Drop-off, pick-up, or delivery - choose whatever works best and we'll handle the rest with care.",
+      "Drop-off, pick-up, or delivery - choose whatever works best and we&apos;ll handle the rest with care.",
   },
   {
     title: "Tech-Enabled Convenience",
@@ -43,7 +43,7 @@ export default function Home() {
           <span className={styles.heroTag}>Neighborhood favorite | Est. 1998</span>
           <h1>Your uptown laundromat, refreshed.</h1>
           <p>
-            Laundry Co is under new ownership, and we're bringing modern machines,
+            Laundry Co is under new ownership, and we&apos;re bringing modern machines,
             a polished space, and friendly service to every single wash day.
           </p>
           <div className={styles.heroActions}>
@@ -77,7 +77,7 @@ export default function Home() {
         <div className={styles.sectionHeading}>
           <h2>Clean clothes, clean conscience.</h2>
           <p>
-            Whether you're a busy family, a local business, or part of the
+            Whether you&apos;re a busy family, a local business, or part of the
             community, we have a service built just for you.
           </p>
         </div>
