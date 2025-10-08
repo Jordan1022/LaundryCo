@@ -1,0 +1,172 @@
+.wrapper {
+  padding: clamp(3rem, 8vw, 6rem) 1.5rem;
+  background: linear-gradient(120deg, var(--color-navy) 0%, var(--color-navy-light) 100%);
+  color: var(--color-white);
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  width: min(960px, 100%);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: clamp(2rem, 4vw, 3rem);
+  display: grid;
+  gap: 1.5rem;
+  box-shadow: 0 24px 60px -32px rgba(0, 0, 0, 0.6);
+}
+
+.card h2 {
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 2.6rem);
+}
+
+.card p {
+  margin: 0;
+  max-width: 540px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.primaryButton {
+  background: var(--color-white);
+  color: var(--color-navy);
+  border: none;
+  border-radius: 999px;
+  padding: 0.75rem 1.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primaryButton:hover,
+.primaryButton:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px -14px rgba(0, 0, 0, 0.6);
+}
+
+.secondaryLink {
+  color: var(--color-white);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.contactDetails {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  margin: 0;
+}
+
+.contactDetails div {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.contactDetails dt {
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.contactDetails dd {
+  margin: 0;
+  font-weight: 600;
+}
+
+.dialogBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(11, 31, 58, 0.65);
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  z-index: 20;
+}
+
+.dialog {
+  background: var(--color-white);
+  color: var(--color-navy);
+  width: min(520px, 100%);
+  border-radius: 18px;
+  padding: clamp(1.75rem, 3vw, 2.5rem);
+  box-shadow: 0 24px 60px -24px rgba(11, 31, 58, 0.65);
+  display: grid;
+  gap: 1.5rem;
+}
+
+.dialogHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.closeButton {
+  appearance: none;
+  background: transparent;
+  border: none;
+  font-size: 1.75rem;
+  line-height: 1;
+  color: inherit;
+  cursor: pointer;
+}
+
+.form {
+  display: grid;
+  gap: 1rem;
+}
+
+.form label {
+  display: grid;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+
+.form input,
+.form textarea {
+  border-radius: 12px;
+  border: 1px solid rgba(11, 31, 58, 0.2);
+  padding: 0.75rem 1rem;
+  font: inherit;
+  color: inherit;
+  background: rgba(11, 31, 58, 0.04);
+}
+
+.submitButton {
+  background: var(--color-navy);
+  color: var(--color-white);
+  border-radius: 999px;
+  border: none;
+  padding: 0.75rem 1.75rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.submitButton:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.successMessage {
+  margin: 0;
+  color: var(--color-navy);
+  font-weight: 600;
+  text-align: center;
+}
+
+@media (max-width: 520px) {
+  .card {
+    padding: 2rem;
+  }
+
+  .dialog {
+    padding: 1.5rem;
+  }
+}
