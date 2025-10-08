@@ -88,7 +88,7 @@ export function ContactSection() {
         <dl className={styles.contactDetails}>
           <div>
             <dt>Laundromat hours</dt>
-            <dd>Daily | 7am-9pm</dd>
+            <dd>Daily | 8am-8pm</dd>
           </div>
           <div>
             <dt>Phone</dt>
