@@ -11,9 +11,10 @@ const initialFormState = {
 
 export function ContactSection() {
   const [formData, setFormData] = useState(initialFormState);
-  const [status, setStatus] = useState<"idle" | "submitting" | "success">(
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">(
     "idle"
   );
+  const [errorMessage, setErrorMessage] = useState("");
   const [showDialog, setShowDialog] = useState(false);
 
   const handleChange = (
@@ -23,29 +24,54 @@ export function ContactSection() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setStatus("submitting");
+    setErrorMessage("");
 
-    // Fake async submission so the UI can be demoed without a backend.
-    setTimeout(() => {
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+
+        // Handle rate limiting specifically
+        if (response.status === 429) {
+          const retryAfter = errorData.retryAfter || 60;
+          throw new Error(`Too many requests. Please wait ${retryAfter} seconds before trying again.`);
+        }
+
+        throw new Error(errorData.error || 'Failed to send message');
+      }
+
       setStatus("success");
       setFormData(initialFormState);
-    }, 800);
+    } catch (error) {
+      console.error('Error sending message:', error);
+      setStatus("error");
+      setErrorMessage(error instanceof Error ? error.message : 'Failed to send message. Please try again.');
+    }
   };
 
   const closeDialog = () => {
     setShowDialog(false);
     setStatus("idle");
+    setErrorMessage("");
   };
 
   return (
     <section className={styles.wrapper} id="contact">
       <div className={styles.card}>
-        <h2>Ready for fresher laundry days?</h2>
+        <h2>Bring your laundry. Shape the refresh.</h2>
         <p>
-          Drop us a note with what you need - pick-up and delivery, wash and fold,
-          commercial loads - we&apos;ll tailor a plan for you.
+          We&apos;re tuning the space, polishing machines, and listening to what our neighbors need most.
+          Drop us a line if you have ideas, questions, or just want a heads-up on the next update.
         </p>
         <div className={styles.actions}>
           <button
@@ -61,16 +87,16 @@ export function ContactSection() {
         </div>
         <dl className={styles.contactDetails}>
           <div>
-            <dt>Hours</dt>
-            <dd>Every day | 7am-9pm</dd>
+            <dt>Laundromat hours</dt>
+            <dd>Daily | 7am-9pm</dd>
           </div>
           <div>
             <dt>Phone</dt>
-            <dd>(555) 123-4567</dd>
+            <dd>832-779-5623</dd>
           </div>
           <div>
-            <dt>Location</dt>
-            <dd>123 Main Street, Your City</dd>
+            <dt>Laundromat</dt>
+            <dd>1191 E Main Street, League City, TX</dd>
           </div>
         </dl>
       </div>
@@ -132,6 +158,11 @@ export function ContactSection() {
               {status === "success" && (
                 <p className={styles.successMessage}>
                   Thanks! We&apos;ll be in touch within one business day.
+                </p>
+              )}
+              {status === "error" && (
+                <p className={styles.errorMessage}>
+                  {errorMessage}
                 </p>
               )}
             </form>

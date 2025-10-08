@@ -2,60 +2,84 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import { ContactSection } from "./components/ContactSection";
 
-const featureData = [
+const features = [
   {
-    title: "Sparkling Clean Results",
+    title: "Bright wash bays",
     description:
-      "High-efficiency washers and eco-friendly detergents give you a brighter clean with less waste.",
+      "We are refreshing the floor with easy-to-clean tile, clear signage, and plenty of folding room so laundry day stays relaxed.",
   },
   {
-    title: "Wash & Fold Concierge",
+    title: "Simple service menu",
     description:
-      "Drop-off, pick-up, or delivery - choose whatever works best and we&apos;ll handle the rest with care.",
+      "Self-serve washers, drop-off service, and more add-ons coming as we finish the cleanup. Tell us what works for you.",
   },
   {
-    title: "Tech-Enabled Convenience",
+    title: "Comfortable wait",
     description:
-      "Track load progress, reserve machines, and get notified when your clothes are ready to roll.",
+      "Grab a seat, plug in, and enjoy soft lighting while we continue polishing the space. The vibe is calm, coastal, and welcoming.",
   },
 ];
 
-const highlights = [
+const progress = [
   {
-    label: "Same-day turns",
-    value: "90%",
+    label: "Laundromat refresh",
+    value: "In progress",
   },
   {
-    label: "Customers recommending",
-    value: "4.9/5",
+    label: "Service upgrades",
+    value: "Rolling out",
   },
   {
-    label: "Loads handled weekly",
-    value: "850+",
+    label: "Guest feedback",
+    value: "Always welcome",
+  },
+];
+
+const gallery = [
+  {
+    src: "/images/laundry2.png",
+    alt: "Laundry Co interior view",
+  },
+  {
+    src: "/images/laundry3.png",
+    alt: "Laundry Co facility details",
   },
 ];
 
 export default function Home() {
   return (
     <main className={styles.page}>
-      <header className={styles.heroSection}>
-        <div className={styles.heroContent}>
-          <span className={styles.heroTag}>Neighborhood favorite | Est. 1998</span>
-          <h1>Your uptown laundromat, refreshed.</h1>
+      <header className={styles.hero}>
+        <div className={styles.heroCopy}>
+          <span className={styles.heroBadge}>Laundry Co | League City</span>
+          <h1>A fresh chapter for neighborhood laundry.</h1>
           <p>
-            Laundry Co is under new ownership, and we&apos;re bringing modern machines,
-            a polished space, and friendly service to every single wash day.
+            We&apos;re giving the shop a glow-up with new tile accents, tuned machines, and
+            an easygoing layout that feels calm and familiar. Drop by while we tidy
+            things up and share what would make laundry day better for you.
           </p>
           <div className={styles.heroActions}>
             <a className={styles.primaryButton} href="#contact">
-              Get in touch
+              Plan a visit
             </a>
-            <a className={styles.secondaryButton} href="#services">
-              See services
+            <a className={styles.secondaryButton} href="#studio">
+              See what&apos;s changing
             </a>
           </div>
-          <dl className={styles.heroStats}>
-            {highlights.map((item) => (
+        </div>
+        <div className={styles.heroVisual}>
+          <div className={styles.heroPanel}>
+            <div className={styles.panelOverlay} />
+            <Image
+              src="/images/laundry.png"
+              alt="Sunlight across glossy blue tile"
+              fill
+              priority
+              className={styles.heroImage}
+            />
+          </div>
+          <dl className={styles.progressPanel}>
+            {progress.map((item) => (
               <div key={item.label}>
                 <dt>{item.label}</dt>
                 <dd>{item.value}</dd>
@@ -63,26 +87,18 @@ export default function Home() {
             ))}
           </dl>
         </div>
-        <div className={styles.heroIllustration}>
-          <div className={styles.machineMock}>
-            <div className={styles.machineCircle} />
-            <div className={styles.machineHandle} />
-          </div>
-          <div className={styles.bubbleOne} />
-          <div className={styles.bubbleTwo} />
-        </div>
       </header>
 
-      <section id="services" className={styles.featuresSection}>
+      <section className={styles.featureSection} id="studio">
         <div className={styles.sectionHeading}>
-          <h2>Clean clothes, clean conscience.</h2>
+          <h2>Making laundry calm, clean, and convenient.</h2>
           <p>
-            Whether you&apos;re a busy family, a local business, or part of the
-            community, we have a service built just for you.
+            We&apos;re brightening the room, tuning every machine, and adding little comforts so the
+            routine feels easy. Come wash, fold, and see the progress for yourself.
           </p>
         </div>
         <div className={styles.featureGrid}>
-          {featureData.map((feature) => (
+          {features.map((feature) => (
             <article key={feature.title} className={styles.featureCard}>
               <h3>{feature.title}</h3>
               <p>{feature.description}</p>
@@ -91,31 +107,49 @@ export default function Home() {
         </div>
       </section>
 
+      <section className={styles.gallerySection}>
+        <div className={styles.galleryCopy}>
+          <h2>Making the space feel more welcoming.</h2>
+          <p>
+            We&apos;re creating a calm, comfortable environment that reflects the easygoing spirit of League City.
+            Each visit should feel a little more relaxed and inviting than the last.
+          </p>
+          <ul className={styles.galleryDetails}>
+            <li>Fresh paint, polished floors, and reorganized folding zones</li>
+            <li>Comfortable seating with charging ledges</li>
+            <li>Warm, even lighting to make late loads easy</li>
+          </ul>
+        </div>
+        <div className={styles.galleryGrid}>
+          {gallery.map((item) => (
+            <figure key={item.alt} className={styles.galleryTile}>
+              <Image src={item.src} alt={item.alt} fill className={styles.galleryImage} />
+            </figure>
+          ))}
+        </div>
+      </section>
+
       <section className={styles.processSection}>
         <div className={styles.processCard}>
-          <h2>How it works</h2>
+          <h2>How Laundry Co flows right now.</h2>
           <ol>
             <li>
-              <strong>Show up or schedule.</strong> Reserve a machine or set a
-              pick-up time in under two minutes.
+              <strong>Arrive &amp; load.</strong> Bring your baskets, choose a washer, and let our team recommend the best cycle.
             </li>
             <li>
-              <strong>We handle the heavy lifting.</strong> Sort, pretreat, wash,
-              dry, fold, and package - done.
+              <strong>Refresh in the space.</strong> Settle into the lounge or explore nearby spots while the machines do their thing.
             </li>
             <li>
-              <strong>Enjoy your fresh start.</strong> Clothes arrive same day or
-              right when the dryers stop.
+              <strong>Share feedback.</strong> Tell us what would make your next visit smoother. We&apos;re improving week by week.
             </li>
           </ol>
         </div>
-        <div className={styles.processImage}>
-          <Image
-            src="https://images.unsplash.com/photo-1514996937319-344454492b37?auto=format&fit=crop&w=1080&q=80"
-            alt="Neatly folded laundry with a navy blue towel on top"
-            width={640}
-            height={480}
-          />
+        <div className={styles.processVisual}>
+          <div className={styles.glassCard}>
+            <p>Coming soon</p>
+            <h3>Neighborhood laundry nights once the refresh wraps.</h3>
+            <span>Sign up for updates at the counter so you know when new perks arrive.</span>
+          </div>
         </div>
       </section>
 
