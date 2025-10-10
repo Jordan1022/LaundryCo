@@ -13,7 +13,8 @@ const nextConfig = {
     const isDev = process.env.NODE_ENV !== "production";
     const csp = [
       "default-src 'self'",
-      `script-src 'self' ${isDev ? "'unsafe-eval'" : ''}`,
+      // Allow inline scripts for Next.js runtime/data scripts; keep eval only in dev
+      `script-src 'self' 'unsafe-inline' ${isDev ? "'unsafe-eval'" : ''}`,
       "style-src 'self' 'unsafe-inline'",
       "img-src 'self' data: https:",
       "connect-src 'self'",
