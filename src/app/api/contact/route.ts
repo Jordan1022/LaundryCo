@@ -85,8 +85,8 @@ export async function POST(request: NextRequest) {
 
         // Send email using Resend
         const { data, error } = await resend.emails.send({
-            from: 'Laundry Co <onboarding@resend.dev>', // You'll need to verify your domain
-            to: ['hello@laundryco.com'], // Replace with your actual email
+            from: 'Laundry Co <support@laundryco.store>', // Using verified email for testing
+            to: ['hello@laundryco.com'], // Your business email to receive contact form submissions
             subject: `New contact form submission from ${name}`,
             html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
