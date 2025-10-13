@@ -92,11 +92,15 @@ export function ContactSection() {
           </div>
           <div>
             <dt>Phone</dt>
-            <dd>832-779-5623</dd>
+            <dd>832 762 4706</dd>
           </div>
           <div>
             <dt>Laundromat</dt>
             <dd>1191 E Main Street, League City, TX</dd>
+          </div>
+          <div>
+            <dt>Office & wash and fold</dt>
+            <dd>M-F | 10am-4pm</dd>
           </div>
         </dl>
       </div>
