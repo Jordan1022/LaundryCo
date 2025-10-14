@@ -2,6 +2,9 @@
   display: grid;
   gap: clamp(4rem, 9vw, 6rem);
   padding-bottom: 0;
+  max-width: 1600px;
+  margin: 0 auto;
+  background: #e8ecf1;
 }
 
 .hero {
