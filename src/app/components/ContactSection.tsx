@@ -6,7 +6,9 @@ import styles from "../styles/ContactSection.module.css";
 const initialFormState = {
   name: "",
   email: "",
+  phone: "",
   message: "",
+  smsOptIn: false,
 };
 
 export function ContactSection() {
@@ -20,7 +22,11 @@ export function ContactSection() {
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    const { name, value } = event.target;
+    const { name } = event.target;
+    const value =
+      event.target instanceof HTMLInputElement && event.target.type === "checkbox"
+        ? event.target.checked
+        : event.target.value;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
@@ -143,6 +149,19 @@ export function ContactSection() {
                 />
               </label>
               <label>
+                Mobile number
+                <input
+                  name="phone"
+                  type="tel"
+                  inputMode="tel"
+                  pattern="^[+]?[0-9\-()\s]{7,20}$"
+                  placeholder="e.g. (555) 123-4567"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  autoComplete="tel"
+                />
+              </label>
+              <label>
                 Message
                 <textarea
                   required
@@ -152,6 +171,23 @@ export function ContactSection() {
                   onChange={handleChange}
                 />
               </label>
+              <div className={styles.consent}>
+                <label className={styles.consentRow}>
+                  <input
+                    required
+                    name="smsOptIn"
+                    type="checkbox"
+                    checked={!!formData.smsOptIn}
+                    onChange={handleChange}
+                  />
+                  <span className={styles.consentText}>
+                    I agree to receive automated marketing and transactional text messages from Laundry Co at the mobile number provided. Msg & data rates may apply. Msg frequency varies. Reply HELP for help and STOP to cancel. Consent is not a condition of purchase.
+                  </span>
+                </label>
+                <p className={styles.legalLinks}>
+                  See our <a href="/terms" target="_blank" rel="noopener noreferrer">Terms</a> and <a href="/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.
+                </p>
+              </div>
               <button
                 type="submit"
                 className={styles.submitButton}

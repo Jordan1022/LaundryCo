@@ -123,6 +123,8 @@
   box-shadow: 0 40px 90px -34px rgba(10, 25, 45, 0.6);
   display: grid;
   gap: 1.6rem;
+  max-height: calc(100vh - 3rem);
+  overflow: auto;
 }
 
 .dialogHeader {
@@ -160,6 +162,34 @@
   font: inherit;
   color: inherit;
   background: rgba(12, 35, 63, 0.06);
+}
+
+.consent {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.consentRow {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 0.6rem;
+}
+
+.consentText {
+  font-weight: 500;
+  color: #0d243f;
+}
+
+.legalLinks {
+  margin: 0;
+  font-size: 0.85rem;
+  color: rgba(13, 36, 63, 0.8);
+}
+
+.legalLinks a {
+  color: #0d243f;
 }
 
 .submitButton {
