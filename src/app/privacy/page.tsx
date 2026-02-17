@@ -5,7 +5,7 @@ export default function PrivacyPage() {
     <main className={styles.page}>
       <div className={styles.container}>
         <h1>Privacy Policy</h1>
-        <p className={styles.updated}>Last updated: December 15, 2024</p>
+        <p className={styles.updated}>Last updated: February 17, 2026</p>
 
         <section>
           <h2>Introduction</h2>
@@ -58,7 +58,7 @@ export default function PrivacyPage() {
             You can opt out at any time by replying STOP to any message. Reply HELP for assistance. Your consent to receive text messages is not a condition of purchase.
           </p>
           <p>
-            We use third-party service providers to send SMS messages. Your phone number will be shared with these providers solely for the purpose of delivering messages to you.
+            We use service providers to send SMS messages and maintain required consent records. These providers may process phone numbers only as needed to deliver messages and support compliance.
           </p>
         </section>
 
@@ -66,11 +66,17 @@ export default function PrivacyPage() {
           <h2>Sharing Your Information</h2>
           <p>We may share your information in the following situations:</p>
           <ul>
-            <li><strong>Service Providers:</strong> We may share your information with third-party service providers who perform services on our behalf, such as SMS delivery, email services, and analytics.</li>
+            <li><strong>Service Providers:</strong> We may share your information with third-party service providers who perform services on our behalf, such as email services and analytics.</li>
             <li><strong>Legal Requirements:</strong> We may disclose your information if required to do so by law or in response to valid requests by public authorities.</li>
             <li><strong>Business Transfers:</strong> If we are involved in a merger, acquisition, or sale of assets, your information may be transferred as part of that transaction.</li>
           </ul>
           <p>We do not sell your personal information to third parties.</p>
+          <p>
+            Mobile opt-in data and consent will not be shared with third parties or affiliates for marketing or promotional purposes.
+          </p>
+          <p>
+            All sharing categories above exclude text messaging originator opt-in data and consent. This information is not sold or shared with external organizations except as required to deliver SMS services you requested.
+          </p>
         </section>
 
         <section>

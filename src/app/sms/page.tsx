@@ -17,6 +17,12 @@ export default function SMSPage() {
         setStatus("submitting");
         setErrorMessage("");
 
+        if (!smsOptIn) {
+            setStatus("error");
+            setErrorMessage("Please check the consent box to join text updates.");
+            return;
+        }
+
         try {
             const response = await fetch("/api/sms/optin", {
                 method: "POST",
@@ -76,7 +82,6 @@ export default function SMSPage() {
 
                     <label className={styles.checkboxRow}>
                         <input
-                            required
                             name="smsOptIn"
                             type="checkbox"
                             checked={smsOptIn}
@@ -106,5 +111,4 @@ export default function SMSPage() {
         </main>
     );
 }
-
 

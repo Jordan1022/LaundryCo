@@ -5,7 +5,7 @@ export default function TermsPage() {
     <main className={styles.page}>
       <div className={styles.container}>
         <h1>Terms of Service</h1>
-        <p className={styles.updated}>Last updated: December 15, 2024</p>
+        <p className={styles.updated}>Last updated: February 17, 2026</p>
 
         <section>
           <h2>Agreement to Terms</h2>
@@ -93,6 +93,11 @@ export default function TermsPage() {
           <h3>No Condition of Purchase</h3>
           <p>
             Your consent to receive text messages is not a condition of purchasing any goods or services from Laundry Co.
+          </p>
+
+          <h3>Mobile Privacy</h3>
+          <p>
+            Mobile opt-in data and consent will not be shared with third parties or affiliates for marketing or promotional purposes. All categories exclude text messaging originator opt-in data and consent, except sharing strictly required to deliver the SMS services you requested.
           </p>
         </section>
 

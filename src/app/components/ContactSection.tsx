@@ -151,6 +151,7 @@ export function ContactSection() {
               <label>
                 Mobile number
                 <input
+                  required={!!formData.smsOptIn}
                   name="phone"
                   type="tel"
                   inputMode="tel"
@@ -174,14 +175,13 @@ export function ContactSection() {
               <div className={styles.consent}>
                 <label className={styles.consentRow}>
                   <input
-                    required
                     name="smsOptIn"
                     type="checkbox"
                     checked={!!formData.smsOptIn}
                     onChange={handleChange}
                   />
                   <span className={styles.consentText}>
-                    I agree to receive automated marketing and transactional text messages from Laundry Co at the mobile number provided. Msg & data rates may apply. Msg frequency varies. Reply HELP for help and STOP to cancel. Consent is not a condition of purchase.
+                    Optional: I agree to receive automated marketing and transactional text messages from Laundry Co at the mobile number provided. Msg & data rates may apply. Msg frequency varies. Reply HELP for help and STOP to cancel. Consent is not a condition of purchase.
                   </span>
                 </label>
                 <p className={styles.legalLinks}>
