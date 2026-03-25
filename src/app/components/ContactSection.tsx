@@ -74,10 +74,10 @@ export function ContactSection() {
   return (
     <section className={styles.wrapper} id="contact">
       <div className={styles.card}>
-        <h2>Bring your laundry. Shape the refresh.</h2>
+        <h2>Bring your laundry. We&apos;ll handle the rest.</h2>
         <p>
-          We&apos;re tuning the space, polishing machines, and listening to what our neighbors need most.
-          Drop us a line if you have ideas, questions, or just want a heads-up on the next update.
+          We&apos;re here and ready to serve you. Drop us a line if you have questions about our services,
+          want to schedule a drop-off, or just want to say hello.
         </p>
         <div className={styles.actions}>
           <button

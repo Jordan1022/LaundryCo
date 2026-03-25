@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Laundry Co | Fresh Starts Daily",
   description:
-    "Laundry Co offers modern washing and folding services with a bright, inviting space. Get in touch to learn more about our updates.",
+    "Laundry Co in League City, TX — open daily with modern washers, drop-off service, and a bright, welcoming space. Stop by today.",
 };
 
 export default function RootLayout({

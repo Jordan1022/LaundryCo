@@ -6,28 +6,28 @@ const features = [
   {
     title: "Bright wash bays",
     description:
-      "We are refreshing the floor with easy-to-clean tile, clear signage, and plenty of folding room so laundry day stays relaxed.",
+      "Clean tile floors, clear signage, and plenty of folding room so laundry day stays relaxed. Everything you need, ready to go.",
   },
   {
     title: "Simple service menu",
     description:
-      "Self-serve washers, drop-off service, and more add-ons coming as we finish the cleanup. Tell us what works for you.",
+      "Self-serve washers, drop-off service, and convenient add-ons. Tell us what works for you and we'll make it happen.",
   },
   {
     title: "Comfortable wait",
     description:
-      "Grab a seat, plug in, and enjoy soft lighting while we continue polishing the space. The vibe is calm, coastal, and welcoming.",
+      "Grab a seat, plug in, and enjoy soft lighting while your clothes spin. The vibe is calm, coastal, and welcoming.",
   },
 ];
 
 const progress = [
   {
-    label: "Laundromat refresh",
-    value: "In progress",
+    label: "Laundromat",
+    value: "Open daily",
   },
   {
     label: "Service upgrades",
-    value: "Rolling out",
+    value: "Now available",
   },
   {
     label: "Guest feedback",
@@ -37,12 +37,12 @@ const progress = [
 
 const gallery = [
   {
-    src: "/images/laundry2.png",
-    alt: "Laundry Co interior view",
+    src: "https://images.unsplash.com/photo-1521656693074-0ef32e80a5d5?w=800&auto=format&fit=crop&q=80",
+    alt: "Clean laundromat interior with rows of washers",
   },
   {
-    src: "/images/laundry3.png",
-    alt: "Laundry Co facility details",
+    src: "https://images.unsplash.com/photo-1604335398980-ededcadcc37d?w=800&auto=format&fit=crop&q=80",
+    alt: "Bright front-load washing machines ready to use",
   },
 ];
 
@@ -52,18 +52,17 @@ export default function Home() {
       <header className={styles.hero}>
         <div className={styles.heroCopy}>
           <span className={styles.heroBadge}>Laundry Co | League City</span>
-          <h1>A fresh chapter for neighborhood laundry.</h1>
+          <h1>Your neighborhood laundromat, open and ready.</h1>
           <p>
-            We&apos;re giving the shop a glow-up with new tile accents, tuned machines, and
-            an easygoing layout that feels calm and familiar. Drop by while we tidy
-            things up and share what would make laundry day better for you.
+            Fresh tile accents, tuned machines, and an easygoing layout that feels calm
+            and familiar. Stop in today — we&apos;re here to make laundry day better for you.
           </p>
           <div className={styles.heroActions}>
             <a className={styles.primaryButton} href="#contact">
-              Plan a visit
+              Visit us today
             </a>
             <a className={styles.secondaryButton} href="#studio">
-              See what&apos;s changing
+              See our services
             </a>
           </div>
         </div>
@@ -71,8 +70,8 @@ export default function Home() {
           <div className={styles.heroPanel}>
             <div className={styles.panelOverlay} />
             <Image
-              src="/images/laundry.png"
-              alt="Sunlight across glossy blue tile"
+              src="https://images.unsplash.com/photo-1550025005-05b9002486c5?w=900&auto=format&fit=crop&q=80"
+              alt="Clean white washers and dryers in a bright laundromat"
               fill
               priority
               className={styles.heroImage}
@@ -91,10 +90,10 @@ export default function Home() {
 
       <section className={styles.featureSection} id="studio">
         <div className={styles.sectionHeading}>
-          <h2>Making laundry calm, clean, and convenient.</h2>
+          <h2>Calm, clean, and convenient — every visit.</h2>
           <p>
-            We&apos;re brightening the room, tuning every machine, and adding little comforts so the
-            routine feels easy. Come wash, fold, and see the progress for yourself.
+            Bright rooms, tuned machines, and little comforts that make the routine feel easy.
+            Come wash, fold, and see for yourself.
           </p>
         </div>
         <div className={styles.featureGrid}>
@@ -109,13 +108,13 @@ export default function Home() {
 
       <section className={styles.gallerySection}>
         <div className={styles.galleryCopy}>
-          <h2>Making the space feel more welcoming.</h2>
+          <h2>A space that feels like your neighborhood.</h2>
           <p>
-            We&apos;re creating a calm, comfortable environment that reflects the easygoing spirit of League City.
-            Each visit should feel a little more relaxed and inviting than the last.
+            A calm, comfortable environment that reflects the easygoing spirit of League City.
+            Every visit feels relaxed and inviting.
           </p>
           <ul className={styles.galleryDetails}>
-            <li>Fresh paint, polished floors, and reorganized folding zones</li>
+            <li>Fresh paint, polished floors, and organized folding zones</li>
             <li>Comfortable seating with charging ledges</li>
             <li>Warm, even lighting to make late loads easy</li>
           </ul>
@@ -131,24 +130,24 @@ export default function Home() {
 
       <section className={styles.processSection}>
         <div className={styles.processCard}>
-          <h2>How Laundry Co flows right now.</h2>
+          <h2>How Laundry Co works.</h2>
           <ol>
             <li>
               <strong>Arrive &amp; load.</strong> Bring your baskets, choose a washer, and let our team recommend the best cycle.
             </li>
             <li>
-              <strong>Refresh in the space.</strong> Settle into the lounge or explore nearby spots while the machines do their thing.
+              <strong>Relax while we run.</strong> Settle into the lounge or explore nearby spots while the machines do their thing.
             </li>
             <li>
-              <strong>Share feedback.</strong> Tell us what would make your next visit smoother. We&apos;re improving week by week.
+              <strong>Grab &amp; go.</strong> Pick up your fresh, clean laundry and head out. It&apos;s that easy.
             </li>
           </ol>
         </div>
         <div className={styles.processVisual}>
           <div className={styles.glassCard}>
-            <p>Coming soon</p>
-            <h3>Neighborhood laundry nights once the refresh wraps.</h3>
-            <span>Sign up for updates at the counter so you know when new perks arrive.</span>
+            <p>Now offering</p>
+            <h3>Drop-off wash &amp; fold service, available weekdays.</h3>
+            <span>Hand off your laundry and pick it up fresh. Ask at the counter or send us a message for details.</span>
           </div>
         </div>
       </section>
