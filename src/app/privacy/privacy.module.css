@@ -1,30 +1,32 @@
 .page {
   min-height: 100vh;
-  background: linear-gradient(to bottom, #f8fafb 0%, #ffffff 100%);
-  padding: 4rem 1.5rem;
+  padding: clamp(2rem, 6vw, 4rem) 1.25rem;
+  background: var(--brand-cream);
 }
 
 .container {
-  max-width: 800px;
+  max-width: 860px;
   margin: 0 auto;
-  background: white;
-  padding: 3rem;
-  border-radius: 12px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  padding: clamp(1.5rem, 4vw, 3rem);
+  border: 1px solid var(--color-rule);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.34);
 }
 
 .container h1 {
-  font-size: 2.5rem;
-  font-weight: 600;
-  color: #1a202c;
-  margin-bottom: 0.5rem;
-  line-height: 1.2;
+  margin: 0 0 0.5rem;
+  color: var(--brand-navy);
+  font-family: var(--font-display), serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  line-height: 1.05;
+  text-transform: uppercase;
 }
 
 .updated {
-  color: #718096;
-  font-size: 0.95rem;
   margin-bottom: 2rem;
+  color: rgba(19, 48, 79, 0.58);
+  font-size: 0.95rem;
   font-style: italic;
 }
 
@@ -33,12 +35,15 @@
 }
 
 .container h2 {
-  font-size: 1.75rem;
-  font-weight: 600;
-  color: #2d3748;
   margin-bottom: 1rem;
   padding-top: 1rem;
-  border-top: 1px solid #e2e8f0;
+  border-top: 1px dashed var(--color-rule);
+  color: var(--brand-red);
+  font-family: var(--font-display), serif;
+  font-size: 1.35rem;
+  font-weight: 400;
+  line-height: 1.08;
+  text-transform: uppercase;
 }
 
 .container section:first-of-type h2 {
@@ -47,16 +52,20 @@
 }
 
 .container h3 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #4a5568;
   margin-top: 1.5rem;
   margin-bottom: 0.75rem;
+  color: var(--brand-navy);
+  font-size: 1.15rem;
+}
+
+.container p,
+.container li,
+.container address {
+  color: rgba(19, 48, 79, 0.76);
+  line-height: 1.7;
 }
 
 .container p {
-  color: #4a5568;
-  line-height: 1.7;
   margin-bottom: 1rem;
 }
 
@@ -66,41 +75,27 @@
 }
 
 .container li {
-  color: #4a5568;
-  line-height: 1.7;
   margin-bottom: 0.5rem;
 }
 
 .container address {
-  font-style: normal;
-  line-height: 1.7;
-  color: #4a5568;
   margin-top: 1rem;
+  font-style: normal;
+}
+
+.container a {
+  color: var(--brand-red);
+  font-weight: 800;
+  text-decoration: underline;
 }
 
 .container strong {
-  color: #2d3748;
-  font-weight: 600;
+  color: var(--brand-navy);
+  font-weight: 800;
 }
 
 @media (max-width: 768px) {
-  .page {
-    padding: 2rem 1rem;
-  }
-
   .container {
-    padding: 2rem 1.5rem;
-  }
-
-  .container h1 {
-    font-size: 2rem;
-  }
-
-  .container h2 {
-    font-size: 1.5rem;
-  }
-
-  .container h3 {
-    font-size: 1.125rem;
+    padding: 1.35rem;
   }
 }

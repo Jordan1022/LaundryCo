@@ -1,29 +1,32 @@
 .footer {
-  background: linear-gradient(to bottom, #f8fafb 0%, #e8eef2 100%);
-  border-top: 1px solid #e2e8f0;
-  padding: 3rem 1.5rem 1.5rem;
-  margin-top: 4rem;
+  margin-top: 0;
+  padding: 2.5rem 1.25rem 1.25rem;
+  border-top: 1px solid var(--color-rule);
+  background: var(--brand-cream);
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 2fr;
-  gap: 3rem;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
   padding-bottom: 2rem;
 }
 
 .brand h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #1a202c;
-  margin-bottom: 0.5rem;
+  margin: 0 0 0.25rem;
+  color: var(--brand-navy);
+  font-family: var(--font-script), cursive;
+  font-size: 2.1rem;
+  font-weight: 400;
+  line-height: 1;
 }
 
 .brand p {
-  color: #718096;
-  font-size: 1rem;
+  margin: 0;
+  color: rgba(19, 48, 79, 0.62);
+  font-weight: 800;
 }
 
 .links {
@@ -33,71 +36,60 @@
 }
 
 .linkColumn h4 {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: #2d3748;
+  margin: 0 0 0.85rem;
+  color: var(--brand-red);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 1rem;
 }
 
 .linkColumn ul {
-  list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .linkColumn li {
-  margin-bottom: 0.75rem;
-  color: #4a5568;
+  margin-bottom: 0.65rem;
+  color: rgba(19, 48, 79, 0.7);
   font-size: 0.95rem;
-  line-height: 1.5;
+  line-height: 1.45;
 }
 
 .linkColumn a {
-  color: #4a5568;
+  color: rgba(19, 48, 79, 0.78);
   text-decoration: none;
-  transition: color 0.2s ease;
 }
 
 .linkColumn a:hover {
-  color: #2d3748;
+  color: var(--brand-red);
   text-decoration: underline;
+  text-underline-offset: 0.18em;
 }
 
 .copyright {
-  border-top: 1px solid #e2e8f0;
-  padding-top: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 1.25rem;
+  border-top: 1px dashed var(--color-rule);
   text-align: center;
 }
 
 .copyright p {
-  color: #718096;
-  font-size: 0.875rem;
   margin: 0;
+  color: rgba(19, 48, 79, 0.55);
+  font-size: 0.875rem;
 }
 
 @media (max-width: 768px) {
-  .footer {
-    padding: 2rem 1rem 1rem;
-  }
-
   .container {
     grid-template-columns: 1fr;
-    gap: 2rem;
   }
 
   .links {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .brand {
-    text-align: center;
-  }
-
-  .linkColumn {
-    text-align: center;
+    gap: 1.35rem;
   }
 }
 

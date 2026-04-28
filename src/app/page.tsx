@@ -4,34 +4,34 @@ import { ContactSection } from "./components/ContactSection";
 
 const features = [
   {
-    title: "Bright wash bays",
+    title: "Self-serve washers",
     description:
-      "We are refreshing the floor with easy-to-clean tile, clear signage, and plenty of folding room so laundry day stays relaxed.",
+      "Bring your baskets, pick a machine, and settle in while the wash gets done.",
   },
   {
-    title: "Simple service menu",
+    title: "Drop-off help",
     description:
-      "Self-serve washers, drop-off service, and more add-ons coming as we finish the cleanup. Tell us what works for you.",
+      "Ask about wash-and-fold timing at the counter when your week is already full.",
   },
   {
-    title: "Comfortable wait",
+    title: "Neighborhood hours",
     description:
-      "Grab a seat, plug in, and enjoy soft lighting while we continue polishing the space. The vibe is calm, coastal, and welcoming.",
+      "Open daily from 8am to 8pm at 1191 E Main Street in League City.",
   },
 ];
 
 const progress = [
   {
-    label: "Laundromat refresh",
-    value: "In progress",
+    label: "Laundromat",
+    value: "Daily 8-8",
   },
   {
-    label: "Service upgrades",
-    value: "Rolling out",
+    label: "Office",
+    value: "M-F 10-4",
   },
   {
-    label: "Guest feedback",
-    value: "Always welcome",
+    label: "League City",
+    value: "Main St.",
   },
 ];
 
@@ -51,19 +51,26 @@ export default function Home() {
     <main className={styles.page}>
       <header className={styles.hero}>
         <div className={styles.heroCopy}>
-          <span className={styles.heroBadge}>Laundry Co | League City</span>
-          <h1>A fresh chapter for neighborhood laundry.</h1>
+          <Image
+            src="/brand/wordmark-leaguecity-below-script.png"
+            alt="The Laundry Co. League City"
+            width={330}
+            height={194}
+            priority
+            unoptimized
+            className={styles.brandmark}
+          />
+          <h1>League City laundry, washed right.</h1>
           <p>
-            We&apos;re giving the shop a glow-up with new tile accents, tuned machines, and
-            an easygoing layout that feels calm and familiar. Drop by while we tidy
-            things up and share what would make laundry day better for you.
+            Drop in for self-serve laundry, easy wash-and-fold help, and a clean
+            neighborhood spot that feels friendly from the first load to the last fold.
           </p>
           <div className={styles.heroActions}>
             <a className={styles.primaryButton} href="#contact">
               Plan a visit
             </a>
             <a className={styles.secondaryButton} href="#studio">
-              See what&apos;s changing
+              See services
             </a>
           </div>
         </div>
@@ -72,9 +79,11 @@ export default function Home() {
             <div className={styles.panelOverlay} />
             <Image
               src="/images/laundry.png"
-              alt="Sunlight across glossy blue tile"
+              alt="Laundry Co washers and folding area"
               fill
+              sizes="(min-width: 960px) 48vw, 100vw"
               priority
+              unoptimized
               className={styles.heroImage}
             />
           </div>
@@ -93,8 +102,8 @@ export default function Home() {
         <div className={styles.sectionHeading}>
           <h2>Making laundry calm, clean, and convenient.</h2>
           <p>
-            We&apos;re brightening the room, tuning every machine, and adding little comforts so the
-            routine feels easy. Come wash, fold, and see the progress for yourself.
+            No fuss, no corporate language. Just clean machines, plain answers, and a
+            local team keeping laundry day moving.
           </p>
         </div>
         <div className={styles.featureGrid}>
@@ -109,21 +118,28 @@ export default function Home() {
 
       <section className={styles.gallerySection}>
         <div className={styles.galleryCopy}>
-          <h2>Making the space feel more welcoming.</h2>
+          <h2>Built for regular laundry days.</h2>
           <p>
-            We&apos;re creating a calm, comfortable environment that reflects the easygoing spirit of League City.
-            Each visit should feel a little more relaxed and inviting than the last.
+            The shop is being shaped around real routines: quick starts, clear counters,
+            useful folding room, and a place to pause between loads.
           </p>
           <ul className={styles.galleryDetails}>
-            <li>Fresh paint, polished floors, and reorganized folding zones</li>
-            <li>Comfortable seating with charging ledges</li>
-            <li>Warm, even lighting to make late loads easy</li>
+            <li>Self-serve washers and dryers for everyday loads</li>
+            <li>Wash-and-fold support during office hours</li>
+            <li>Simple hours, clear service, and no runaround</li>
           </ul>
         </div>
         <div className={styles.galleryGrid}>
           {gallery.map((item) => (
             <figure key={item.alt} className={styles.galleryTile}>
-              <Image src={item.src} alt={item.alt} fill className={styles.galleryImage} />
+              <Image
+                src={item.src}
+                alt={item.alt}
+                fill
+                sizes="(min-width: 960px) 24vw, (min-width: 640px) 44vw, 100vw"
+                unoptimized
+                className={styles.galleryImage}
+              />
             </figure>
           ))}
         </div>
@@ -131,24 +147,32 @@ export default function Home() {
 
       <section className={styles.processSection}>
         <div className={styles.processCard}>
-          <h2>How Laundry Co flows right now.</h2>
+          <h2>How Laundry Co works.</h2>
           <ol>
             <li>
-              <strong>Arrive &amp; load.</strong> Bring your baskets, choose a washer, and let our team recommend the best cycle.
+              <strong>Arrive &amp; load.</strong> Bring your baskets, choose a washer, and ask for help if you need it.
             </li>
             <li>
-              <strong>Refresh in the space.</strong> Settle into the lounge or explore nearby spots while the machines do their thing.
+              <strong>Wash &amp; wait.</strong> Fold at the counter, take a seat, or step out while the machines do their thing.
             </li>
             <li>
-              <strong>Share feedback.</strong> Tell us what would make your next visit smoother. We&apos;re improving week by week.
+              <strong>Head out clean.</strong> Leave with fresh laundry and a little more of your day intact.
             </li>
           </ol>
         </div>
         <div className={styles.processVisual}>
           <div className={styles.glassCard}>
-            <p>Coming soon</p>
-            <h3>Neighborhood laundry nights once the refresh wraps.</h3>
-            <span>Sign up for updates at the counter so you know when new perks arrive.</span>
+            <Image
+              src="/brand/mascot-washer-character.png"
+              alt="Laundry Co washer mascot"
+              width={180}
+              height={194}
+              unoptimized
+              className={styles.mascot}
+            />
+            <p>League City</p>
+            <h3>Drop it off. We&apos;ll handle it.</h3>
+            <span>Ask at the counter about current wash-and-fold timing.</span>
           </div>
         </div>
       </section>
