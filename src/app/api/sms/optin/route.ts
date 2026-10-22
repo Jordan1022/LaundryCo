@@ -2,7 +2,13 @@ import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { rateLimiter } from '../../../../lib/rateLimiter';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+function getResend() {
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey) {
+        return null;
+    }
+    return new Resend(apiKey);
+}
 
 export async function POST(request: NextRequest) {
     try {
@@ -42,8 +48,21 @@ export async function POST(request: NextRequest) {
         }
 
         const consentTimestamp = new Date().toISOString();
-        const ipAddress = request.headers.get('x-forwarded-for') || request.ip || 'unknown';
+        const ipAddress =
+            request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
+            request.headers.get('x-real-ip') ||
+            request.headers.get('cf-connecting-ip') ||
+            'unknown';
         const userAgent = request.headers.get('user-agent') || 'unknown';
+
+        const resend = getResend();
+        if (!resend) {
+            console.error('RESEND_API_KEY is not configured');
+            return NextResponse.json(
+                { error: 'Email service is not configured' },
+                { status: 503 }
+            );
+        }
 
         const { data, error } = await resend.emails.send({
             from: 'Laundry Co <support@laundryco.store>',
